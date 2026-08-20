@@ -267,8 +267,9 @@ Execution Directive: If Sections 2 or 3 are empty, proceed immediately using onl
 
 To ensure absolute structural integrity and pedagogical accuracy, adhere to these strict rules:
 
-1. Base Equations:
-Every derivation problem MUST start explicitly from one of the fundamental base formulas presented or implied in the source material (do not jump directly to intermediate or already-derived formulas).
+1. Base Equations & Mandatory Initial Steps:
+   - EVERY derivation problem MUST start explicitly from one of the un-manipulated fundamental base formulas presented or implied in the source material (e.g., $PV = nRT$, $\frac{P_1}{T_1} = \frac{P_2}{T_2}$, or $P_1V_1 = P_2V_2$).
+   - NEVER jump directly to intermediate or already-derived formulas. Even for complex derived problems, Step 1 MUST begin with the original base equation and explicitly show any variable substitutions (e.g., substituting $n = \frac{g}{MW}$) step by step.
 
 2. Problem Structure & Formatting:
 Present each practice problem strictly using list format (no numerical values, long scenarios, or extra information—only the listed variables and the isolated variable requested). Format each problem exactly as follows:
@@ -294,26 +295,37 @@ Present each practice problem strictly using list format (no numerical values, l
 3. Algebraic Complexity & Derivations:
 Vary the difficulty across the 10 problems. Include basic single-step rearrangements as well as complex multi-step derivations requiring variable substitutions (such as substituting intermediate expressions, fractions, or secondary definitions present in the material).
 
-4. Output Layout & Explicit Step-by-Step Solution Key:
+4. Beginner-Friendly Step-by-Step Derivation Rules:
+Write all solutions in the Answer Key as if teaching a student who is completely new to algebra and only understands simple multiplication and division balance rules. Follow these strict step-by-step clarity rules:
+
+   a. Start at the Base: Always begin with the un-manipulated fundamental base formula.
+   b. Single Fraction Formatting: When substituting a fraction (e.g., $n = \frac{g}{MW}$ into $PV = nRT$), immediately show a step where non-fractional terms are multiplied into the numerator to form one clean fraction before performing clearing operations:
+      $$PV = \left(\frac{g}{MW}\right)RT$$
+      Combine terms into the numerator:
+      $$PV = \frac{gRT}{MW}$$
+   c. Clear Denominators First: Always clear fractions by multiplying both sides by the denominator first before performing any division. Avoid multiplying by fractional reciprocals.
+   d. Show Full Balance Steps Before Simplification: Always display the explicit algebraic operation applied to BOTH sides of the equation BEFORE writing the simplified result.
+   e. Strict Side-Retention Before Flipping: When canceling terms, keep the remaining target variable on its ORIGINAL side first. Do NOT swap sides during a simplification step. Show the intermediate un-swapped result first, and only swap sides in a separate final step.
+      Incorrect (Skipped step):
+      Divide both sides by $nR$:
+      $$\frac{PV}{nR} = \frac{nRT}{nR}$$
+      Simplify:
+      $$T = \frac{PV}{nR}$$
+
+      Correct (Strict step-by-step execution):
+      Divide both sides by $nR$:
+      $$\frac{PV}{nR} = \frac{nRT}{nR}$$
+      Simplify (cancel $n$ and $R$ on the right side, keeping $T$ on the right side):
+      $$\frac{PV}{nR} = T$$
+      Rearrange to state the target variable on the left side:
+      $$\mathbf{T = \frac{PV}{nR}}$$
+   f. Final Output: End each derivation by stating the final isolated equation in bold on its own line:
+      $$\mathbf{MW = \frac{gRT}{PV}}$$
+
+5. Output Layout:
    - Present all 10 problems first (numbered 1–10) without solutions.
    - Insert a clear separator line (---).
-   - Below the separator, provide a detailed, step-by-step Answer Key showing the precise algebraic derivation for each problem.
-   - Step-by-Step Clarity Rules:
-     a. Begin every derivation with the un-manipulated base formula.
-     b. When substituting a fractional or multi-term quantity (e.g., $n = \frac{g}{MW}$ into $PV = nRT$), show an explicit step where terms are combined into a single fraction in the numerator before performing clearing operations:
-        $$PV = \left(\frac{g}{MW}\right)RT$$
-        Combine $RT$ into the numerator:
-        $$PV = \frac{gRT}{MW}$$
-     c. Show the explicit intermediate multiplication/division step applied to BOTH sides of the equation before showing the resulting simplified equation with the variable cleared or isolated. For example:
-        Multiply both sides by $MW$:
-        $$PV \cdot MW = \left(\frac{gRT}{MW}\right) \cdot MW$$
-        Simplify (cancel $MW$ from the right side):
-        $$PV \cdot MW = gRT$$
-        Divide both sides by $PV$:
-        $$\frac{PV \cdot MW}{PV} = \frac{gRT}{PV}$$
-        Simplify (cancel $PV$ from the left side):
-        $$MW = \frac{gRT}{PV}$$
-     d. End each derivation with the final isolated variable equation in bold.
+   - Below the separator, provide the complete, detailed step-by-step Answer Key following all rules above.
 
 Here is the material to work from:
 
@@ -392,7 +404,7 @@ P = 48.93 atm
 Ideal gas = 1 atm
 Real gas: more than 1 atm
 Example 2:
-Calculate the temperature where  0.2 moles of nitrogen gas occupies a volume of 0.8 L at 570 mmHg exist, using the ideal gas equation. (1atm = 760 mmHg).
+Calculate the temperature where  0.2 moles of nitrogen gas occupies a volume of 0.8 L at 570 mmHg exist, using the ideal gas equation. (1atm = 760 mmHg).
 Formula:
 PV=nRT;derivingformulaforT
 PV
@@ -429,7 +441,7 @@ nR
 
 Answer:
 T = 36.56 K
-Molecular Weight                                
+Molecular Weight                                
 The approximate molecular weight of a gas can be determined by the use of the ideal gas law. The number of moles of gas n is replaced by its equivalent g/M, in which g is the number of grams of gas and M is the molecular weight.
 PV=nRTorPV=
 g
@@ -441,7 +453,7 @@ molwt=
 gRT
 PV
 
- 
+ 
 Example:
 If 0.30 g of ethyl alcohol in the vapor state occupies 200 mL of a pressure of 1 atm and a temperature of 100 oC, What is the molecular weight of ethyl alcohol? Assume that the vapor behaves as an ideal gas.
 Formula:
@@ -449,7 +461,7 @@ molwt=
 gRT
 PV
 
- 
+ 
 Given:
 g = 0.30 g
 R=
@@ -458,7 +470,7 @@ moleK
 
 T = 100 + 273.15 = 373.15 K
 P = 1 atm
-V = 200 mL = 
+V = 200 mL = 
 200mL×
 1L
 1000mL
@@ -475,31 +487,31 @@ molwt=
 mole
 
 KINETIC MOLECULAR THEORY:
-            The theory that was developed explaining the behaviour of gases to back up gas laws like Charles Law and Boyles Law. Here are some important points to remember taken as an excerpt from https://courses.lumenlearning.com/introchem/chapter/kinetic-molecular-theory-and-gas-laws/
+            The theory that was developed explaining the behaviour of gases to back up gas laws like Charles Law and Boyles Law. Here are some important points to remember taken as an excerpt from https://courses.lumenlearning.com/introchem/chapter/kinetic-molecular-theory-and-gas-laws/
 1. The volume occupied by the individual particles of a gas is negligible compared to the volume of the gas itself.
 2. The particles of an ideal gas exert no attractive forces on each other or on their surroundings.
 3. Gas particles are in a constant state of random motion and move in straight lines until they collide with another body.
 4. The collisions exhibited by gas particles are completely elastic; when two molecules collide, total kinetic energy is conserved.]
-  5. The average kinetic energy of gas molecules is directly proportional to absolute temperature only; this implies that all molecular motion ceases if the temperature is reduced to absolute
+  5. The average kinetic energy of gas molecules is directly proportional to absolute temperature only; this implies that all molecular motion ceases if the temperature is reduced to absolute
 
 Charles's Law states that the volume of a gas is directly proportional to its Kelvin temperature when pressure stays the same. The main formula is (\frac{V_1}{T_1} = \frac{V_2}{T_2}) (or (V_1T_2 = V_2T_1)), where (V) is volume, (T) is
 
-5                   Gay-Lussac’s Law formula is (\frac{P_1}{T_1} = \frac{P_2}{T_2}) or (P \propto T) at a constant volume. It shows that gas pressure goes up or down directly with its absolute temperature.Understanding the Variables(P_{1}): Start pressure(T_{1}): Start temperature (in Kelvin)(P_{2}): End pressure(T_{2}): End temperature (in Kelvin)
+5                   Gay-Lussac’s Law formula is (\frac{P_1}{T_1} = \frac{P_2}{T_2}) or (P \propto T) at a constant volume. It shows that gas pressure goes up or down directly with its absolute temperature.Understanding the Variables(P_{1}): Start pressure(T_{1}): Start temperature (in Kelvin)(P_{2}): End pressure(T_{2}): End temperature (in Kelvin)
 
 
 The ideal gas equation is PV = nRT. It links the pressure (P), volume (V), number of moles, and absolute temperature (T) of a gas using the universal gas constant (R). You can explore more details on the Wikipedia Ideal Gas Law Overview.Equation VariablesP: Pressure of the gasV: Volume of the gasn: Amount of substance in molesR: Ideal gas constant (0.08205 L⋅atm/(mol⋅K) or 8.314 J/(mol⋅K))T: Temperature in Kelvin
 
 Gases are described as molecules that have higher kinetic energy (energy in movement) that produces rapid motion, are held together by weak intermolecular forces, have no regular shape, are capable of filling all available space, are compressible, and, and for many gases, are invisible. Properties of matter:
-a. Gas exert pressure --- a force per unit area (dynes/cm2) as they collide to one another and to walls of the container to which they are confined. Also recorded in the atmosphere (atm) or millimeters of mercury (mmHg) using a barometer. 
-b.  Gas has volume, expressed in liters or cubic centimeters (1 cm3 = 1 mL).
-c. Gas equations have given temperatures in the absolute or Kelvin scale. Zero degrees on the centigrade scale (oC) = 273.15 Kelvin (K). 
+a. Gas exert pressure --- a force per unit area (dynes/cm2) as they collide to one another and to walls of the container to which they are confined. Also recorded in the atmosphere (atm) or millimeters of mercury (mmHg) using a barometer. 
+b.  Gas has volume, expressed in liters or cubic centimeters (1 cm3 = 1 mL).
+c. Gas equations have given temperatures in the absolute or Kelvin scale. Zero degrees on the centigrade scale (oC) = 273.15 Kelvin (K). 
 The Ideal Gas Law
-Gases such as oxygen, nitrogen and hydrogen at normal temperatures and pressures (no intermolecular interactions and no exchange of energy upon collision) can be defined by the ideal gas laws such as Boyle's and Charle's laws. 
-Boyle's Law - states that for1 mole of gas at a fixed temperature, the product of pressure (P) and volume (V) is a constant (k). 
-Charle's Law - relates the volume of a gas to the temperature (T). 
-PV = k x T, where k (constant) is the R-value (ideal gas constant). R = 0.08205 L atm/ degree mole when, P = 1 atm; V = 22.4 L (volume of  1 mole of an ideal gas); and T= 273.15 K. Thus, the general gas equation for more than 1 mole of gas is:
+Gases such as oxygen, nitrogen and hydrogen at normal temperatures and pressures (no intermolecular interactions and no exchange of energy upon collision) can be defined by the ideal gas laws such as Boyle's and Charle's laws. 
+Boyle's Law - states that for1 mole of gas at a fixed temperature, the product of pressure (P) and volume (V) is a constant (k). 
+Charle's Law - relates the volume of a gas to the temperature (T). 
+PV = k x T, where k (constant) is the R-value (ideal gas constant). R = 0.08205 L atm/ degree mole when, P = 1 atm; V = 22.4 L (volume of  1 mole of an ideal gas); and T= 273.15 K. Thus, the general gas equation for more than 1 mole of gas is:
 PV = nRT
-where n = moles of gas and T is the absolute temperature in Kelvin. 
+where n = moles of gas and T is the absolute temperature in Kelvin. 
 Example 1:
 What is the pressure of carbon dioxide gas when 1 mole of the gas occupies 0.5 L at 25 oC (11oF)?
 Formula:
