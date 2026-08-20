@@ -263,7 +263,268 @@ R=0.08205
 ]
 
 Execution Directive: If Sections 2 or 3 are empty, proceed immediately using only Section 1 as your structural and data blueprint. Do not ask for clarification; prioritize absolute structural and mathematical alignment with Section 1.`,
-        2: `[PLACEHOLDER PROMPT 2: Put your custom ChatGPT prompt text here]`,
+        2: `You are an expert Professor and instructional designer. Your primary objective is to analyze the underlying mathematical formulas, relationships, and concepts provided in the source material and generate exactly 10 new, distinct practice problems focused exclusively on formula rearrangement and algebraic derivation (isolating a target variable). Do NOT include numerical values or word problem scenarios.
+
+To ensure absolute structural integrity and pedagogical accuracy, adhere to these strict rules:
+
+1. Base Equations:
+Every derivation problem MUST start explicitly from one of the fundamental base formulas presented or implied in the source material (do not jump directly to intermediate or already-derived formulas).
+
+2. Problem Structure & Formatting:
+Present each practice problem strictly using list format (no numerical values, long scenarios, or extra information—only the listed variables and the isolated variable requested). Format each problem exactly as follows:
+
+   Given:
+   [Variable 1]
+   [Variable 2]
+   [Variable 3]
+   ...
+
+   Isolate: [Target Variable]
+
+   Example:
+   Given:
+   g
+   R
+   T
+   P
+   V
+
+   Isolate: MW
+
+3. Algebraic Complexity & Derivations:
+Vary the difficulty across the 10 problems. Include basic single-step rearrangements as well as complex multi-step derivations requiring variable substitutions (such as substituting intermediate expressions, fractions, or secondary definitions present in the material).
+
+4. Output Layout & Explicit Step-by-Step Solution Key:
+   - Present all 10 problems first (numbered 1–10) without solutions.
+   - Insert a clear separator line (---).
+   - Below the separator, provide a detailed, step-by-step Answer Key showing the precise algebraic derivation for each problem.
+   - Step-by-Step Clarity Rules:
+     a. Begin every derivation with the un-manipulated base formula.
+     b. When substituting a fractional or multi-term quantity (e.g., $n = \frac{g}{MW}$ into $PV = nRT$), show an explicit step where terms are combined into a single fraction in the numerator before performing clearing operations:
+        $$PV = \left(\frac{g}{MW}\right)RT$$
+        Combine $RT$ into the numerator:
+        $$PV = \frac{gRT}{MW}$$
+     c. Show the explicit intermediate multiplication/division step applied to BOTH sides of the equation before showing the resulting simplified equation with the variable cleared or isolated. For example:
+        Multiply both sides by $MW$:
+        $$PV \cdot MW = \left(\frac{gRT}{MW}\right) \cdot MW$$
+        Simplify (cancel $MW$ from the right side):
+        $$PV \cdot MW = gRT$$
+        Divide both sides by $PV$:
+        $$\frac{PV \cdot MW}{PV} = \frac{gRT}{PV}$$
+        Simplify (cancel $PV$ from the left side):
+        $$MW = \frac{gRT}{PV}$$
+     d. End each derivation with the final isolated variable equation in bold.
+
+Here is the material to work from:
+
+### Source Material
+[THE GASEOUS STATE (PROPERTIES)
+Pressure - force per unit area
+(dynes/cm2); recorded in atmospheres or in mm of mercury (mmHg)
+Volume - expressed in L or cubic centimeters
+(1 cm'=
+Temperature - 0°C or _
+K
+
+THE GASEOUS STATE
+Ideal Gas Equation
+Pressure
+Temperature
+Number of moles
+PVEnRT
+Volume
+Gas constant
+
+THE GASEOUS STATE
+Ideal Gas Equation
+SAMPLE PROBLEM 2:
+• Calculate the temperature where 0.2 moles of nitrogen gas occupies a volume of 0.8 Lat 570 mmHg exist, using the
+ideal gas equation. (latm = 760 mmHg).
+
+THE GASEOUS STATE
+Ideal Gas Equation
+SAMPLE PROBLEM 1:
+• What is the pressure of carbon dioxide gas when 1 mole of the gas occupies 0.5
+L at 25C (11F)?
+
+THE GASEOUS STATE
+Ideal Gas Equation
+PV = 9
+RT
+MW
+PV= gRI
+MW
+SAMPLE PROBLEM 3:
+• IF 0.30 g of ethyl alcohol in the vapor state occupies 200 mL of a pressure of 1 atm and a temperature of 100 oC, What is the molecular weight of ethyl alcohol?
+PV
+PV
+MW= 9RT
+PV
+Assume that the vapor behaves as an ideal gas.
+
+SAMPLE PROBLEM 1:
+• A hospital pharmacy receives a portable oxygen cylinder with an internal volume of 4.5 liters. The pressure gauge reads 150 atm.
+If the oxygen is administered to a patient at a standard atmospheric pressure of 1.0 atm, what is the total volume of oxygen available to the patient at room temperature?
+
+SAMPLE PROBLEM 2:
+• A clinical pharmacist is reviewing the settings for a respiratory ventilator: The ventilator delivers a 0.50 L dose of air from a room-temperature holding chamber at 20C.
+When this air enters the patient's lungs, it warms up to the standard human body temperature of 37C. Assuming the pressure inside the lungs remains constant, what is the final volume of the air inside the patient's lungs?
+
+SAMPLE PROBLEM 2:
+• Rigid pharmaceutical autoclave used to sterilize surgical equipment is sealed at room temperature 25C with an internal pressure of 1.00atm. To achieve sterilization, the autoclave is heated until its internal temperature reaches 121C. Calculate the internal pressure inside the autoclave at 121C, assuming the volume of the chamber remains constant.
+
+
+Given:
+n = 1 mole
+T = 273.15 + 25 = 298.15 K
+V = 0.5 L
+R=
+0.08205Latm
+moleK
+
+Substitution:
+P=
+1molex0.08205LatmpermoleKx298.15K
+0.51L
+
+Answer:
+P = 48.93 atm
+Ideal gas = 1 atm
+Real gas: more than 1 atm
+Example 2:
+Calculate the temperature where  0.2 moles of nitrogen gas occupies a volume of 0.8 L at 570 mmHg exist, using the ideal gas equation. (1atm = 760 mmHg).
+Formula:
+PV=nRT;derivingformulaforT
+PV
+nR
+
+=
+nRT
+nR
+
+⇒T=
+PV
+nR
+
+Given:
+P=570mmHg×
+1atm
+760mmHg
+
+=0.75atm
+V = 0.8 L
+n = 0.20 moles
+R=
+0.08205Latm
+moleK
+
+Substitution:
+T=
+PV
+nR
+
+=
+0.75x0.8
+0.20x0.08205
+
+Answer:
+T = 36.56 K
+Molecular Weight                                
+The approximate molecular weight of a gas can be determined by the use of the ideal gas law. The number of moles of gas n is replaced by its equivalent g/M, in which g is the number of grams of gas and M is the molecular weight.
+PV=nRTorPV=
+g
+molwt
+
+RT
+; deriving the formula for molecular weight (mol wt)
+molwt=
+gRT
+PV
+
+ 
+Example:
+If 0.30 g of ethyl alcohol in the vapor state occupies 200 mL of a pressure of 1 atm and a temperature of 100 oC, What is the molecular weight of ethyl alcohol? Assume that the vapor behaves as an ideal gas.
+Formula:
+molwt=
+gRT
+PV
+
+ 
+Given:
+g = 0.30 g
+R=
+0.08205Latm
+moleK
+
+T = 100 + 273.15 = 373.15 K
+P = 1 atm
+V = 200 mL = 
+200mL×
+1L
+1000mL
+
+=0.200L
+Substitution:
+molwt=
+0.30×0.08205x373.15
+1×0.200
+
+Answer:
+molwt=
+45.93g
+mole
+
+KINETIC MOLECULAR THEORY:
+            The theory that was developed explaining the behaviour of gases to back up gas laws like Charles Law and Boyles Law. Here are some important points to remember taken as an excerpt from https://courses.lumenlearning.com/introchem/chapter/kinetic-molecular-theory-and-gas-laws/
+1. The volume occupied by the individual particles of a gas is negligible compared to the volume of the gas itself.
+2. The particles of an ideal gas exert no attractive forces on each other or on their surroundings.
+3. Gas particles are in a constant state of random motion and move in straight lines until they collide with another body.
+4. The collisions exhibited by gas particles are completely elastic; when two molecules collide, total kinetic energy is conserved.]
+  5. The average kinetic energy of gas molecules is directly proportional to absolute temperature only; this implies that all molecular motion ceases if the temperature is reduced to absolute
+]
+
+### 2. Additional Directions & Preferences
+[
+Focus solely on algebraic formula derivation and isolation.
+]
+
+### 3. Constant Tables & Reference Data
+[
+Charles's Law states that the volume of a gas is directly proportional to its Kelvin temperature when pressure stays the same. The main formula is (\frac{V_1}{T_1} = \frac{V_2}{T_2}) (or (V_1T_2 = V_2T_1)), where (V) is volume, (T) is
+
+5                   Gay-Lussac’s Law formula is (\frac{P_1}{T_1} = \frac{P_2}{T_2}) or (P \propto T) at a constant volume. It shows that gas pressure goes up or down directly with its absolute temperature.Understanding the Variables(P_{1}): Start pressure(T_{1}): Start temperature (in Kelvin)(P_{2}): End pressure(T_{2}): End temperature (in Kelvin)
+
+
+The ideal gas equation is PV = nRT. It links the pressure (P), volume (V), number of moles, and absolute temperature (T) of a gas using the universal gas constant (R). You can explore more details on the Wikipedia Ideal Gas Law Overview.Equation VariablesP: Pressure of the gasV: Volume of the gasn: Amount of substance in molesR: Ideal gas constant (0.08205 L⋅atm/(mol⋅K) or 8.314 J/(mol⋅K))T: Temperature in Kelvin
+
+Gases are described as molecules that have higher kinetic energy (energy in movement) that produces rapid motion, are held together by weak intermolecular forces, have no regular shape, are capable of filling all available space, are compressible, and, and for many gases, are invisible. Properties of matter:
+a. Gas exert pressure --- a force per unit area (dynes/cm2) as they collide to one another and to walls of the container to which they are confined. Also recorded in the atmosphere (atm) or millimeters of mercury (mmHg) using a barometer. 
+b.  Gas has volume, expressed in liters or cubic centimeters (1 cm3 = 1 mL).
+c. Gas equations have given temperatures in the absolute or Kelvin scale. Zero degrees on the centigrade scale (oC) = 273.15 Kelvin (K). 
+The Ideal Gas Law
+Gases such as oxygen, nitrogen and hydrogen at normal temperatures and pressures (no intermolecular interactions and no exchange of energy upon collision) can be defined by the ideal gas laws such as Boyle's and Charle's laws. 
+Boyle's Law - states that for1 mole of gas at a fixed temperature, the product of pressure (P) and volume (V) is a constant (k). 
+Charle's Law - relates the volume of a gas to the temperature (T). 
+PV = k x T, where k (constant) is the R-value (ideal gas constant). R = 0.08205 L atm/ degree mole when, P = 1 atm; V = 22.4 L (volume of  1 mole of an ideal gas); and T= 273.15 K. Thus, the general gas equation for more than 1 mole of gas is:
+PV = nRT
+where n = moles of gas and T is the absolute temperature in Kelvin. 
+Example 1:
+What is the pressure of carbon dioxide gas when 1 mole of the gas occupies 0.5 L at 25 oC (11oF)?
+Formula:
+PV=nRT
+; derive the formula of pressure
+PV
+V
+
+=
+nRT
+V
+
+⇒P=
+nRT
+V
+
+R=0.08205]`,
         3: `[PLACEHOLDER PROMPT 3: Put your custom ChatGPT prompt text here]`,
         4: `[PLACEHOLDER PROMPT 4: Put your custom ChatGPT prompt text here]`,
         5: `[PLACEHOLDER PROMPT 5: Put your custom ChatGPT prompt text here]`,
