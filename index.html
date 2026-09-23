@@ -529,7 +529,73 @@ nRT
 V
 
 R=0.08205]`,
-        3: `[PLACEHOLDER PROMPT 3: Put your custom ChatGPT prompt text here]`,
+        3: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+
+To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
+1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
+2. Clinical Variation: Change the patient profile (age, weight, indications), the specific medications, and the numerical values. Do not simply swap numbers using the same drug or scenario. Ensure the new scenarios remain clinically plausible.
+3. Medication Safety Formatting: Adhere strictly to ISMP (Institute for Safe Medication Practices) guidelines for numerical expressions:
+   - ALWAYS use a leading zero for decimals less than 1 (e.g., write 0.5 mg, NEVER .5 mg).
+   - NEVER use a trailing zero for whole numbers (e.g., write 5 mg, NEVER 5.0 mg).
+4. Output Layout: Present all 5 problems first (numbered 1–5) without answers. Insert a clear separator line (---). Place the detailed, step-by-step calculations, dimensional analysis, and final bolded answers at the very bottom.
+
+Here is the material to work from:
+
+### 1. Source Practice Problem(s)
+[
+
+Henry's Law
+PROBLEM:
+The partial pressure of carbon dioxide gas inside a bottle of cola is 4 atm at 25 °C. What is the solubility of CO,? The Henry's law constant for CO, dissolved in water is 3.3 x 10-2 mol/L'atm at 25 °C?
+
+Problem 1: Given Pressure in mmHg
+Question: Calculate the solubility (in mol/L) of nitrogen gas (N₂) in water at 25°C when the partial pressure of N₂ above the solution is 570 mmHg. The Henry's Law constant for N₂ in water at 25°C is 8.42 × 10⁻⁴ M/atm.
+Detailed Solution & Step-by-Step Step Breakdown:
+1. Identify Given Values:
+* P_gas = 570 mmHg
+* k_H = 8.42 × 10⁻⁴ M/atm
+1. Convert Pressure Units (mmHg to atm): P_gas = 570 mmHg / 760 mmHg/atm = 0.75 atm
+2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (8.42 × 10⁻⁴ mol/L·atm) * (0.75 atm) S_gas = 6.315 × 10⁻⁴ M (or mol/L)
+Final Answer: The solubility of N₂ gas is 6.32 × 10⁻⁴ M.
+Problem 2: Given Pressure in Torr and Henry's Law Constant in M/mmHg
+Question: The Henry's Law constant for oxygen gas (O₂) in water at 25°C is given as 1.66 × 10⁻⁶ M/mmHg. If a container of oxygenated water is maintained under an oxygen partial pressure of 380 Torr at 25°C, determine the solubility of O₂ in mol/L. (Note: 1 Torr = 1 mmHg).
+Detailed Solution & Step-by-Step Step Breakdown:
+1. Identify Given Values:
+* P_gas = 380 Torr = 380 mmHg
+* k_H = 1.66 × 10⁻⁶ M/mmHg
+1. Check Units Compatibility: Since 1 Torr = 1 mmHg, P_gas = 380 mmHg. The constant k_H is already expressed in M/mmHg, so no unit conversion between atm and mmHg is necessary.
+2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (1.66 × 10⁻⁶ M/mmHg) * (380 mmHg) S_gas = 6.308 × 10⁻⁴ M
+Final Answer: The solubility of O₂ gas is 6.31 × 10⁻⁴ M.
+Problem 3: Solving for Partial Pressure (in mmHg) Given Gas Solubility
+Question: The solubility of carbon dioxide (CO₂) in a soft drink sample at 25°C is determined to be 0.066 mol/L. If the Henry's Law constant for CO₂ in water at 25°C is 3.3 × 10⁻² mol/L·atm, calculate the partial pressure of CO₂ above the liquid in mmHg.
+Detailed Solution & Step-by-Step Step Breakdown:
+1. Identify Given Values:
+* S_gas = 0.066 M (mol/L)
+* k_H = 3.3 × 10⁻² mol/L·atm
+1. Rearrange Henry's Law Formula to Solve for P_gas: P_gas = S_gas / k_H
+2. Calculate Pressure in atm: P_gas = (0.066 mol/L) / (3.3 × 10⁻² mol/L·atm) = 2.0 atm
+3. Convert Pressure from atm to mmHg: P_gas (in mmHg) = 2.0 atm * 760 mmHg/atm = 1520 mmHg
+Final Answer: The partial pressure of CO₂ required is 1520 mmHg (or 2.0 atm).
+
+
+]
+
+### 2. Additional Directions & Preferences
+[
+reduce to 2 decimals final answer 
+]
+
+### 3. Constant Tables & Reference Data
+[
+
+C = k * P  (or S_gas = k_H * P_gas)
+* C (or S_gas): Solubility of gas in liquid (M, mol/L)
+* k (or k_H): Henry's Law Constant
+* P (or P_gas): Partial pressure of gas above solution
+* Conversion factor: 1 atm = 760 mmHg = 760 Torr
+
+
+]`,
         4: `[PLACEHOLDER PROMPT 4: Put your custom ChatGPT prompt text here]`,
         5: `[PLACEHOLDER PROMPT 5: Put your custom ChatGPT prompt text here]`,
         6: `[PLACEHOLDER PROMPT 6: Put your custom ChatGPT prompt text here]`,
