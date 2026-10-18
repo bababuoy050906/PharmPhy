@@ -617,9 +617,398 @@ C = k * P  (or S_gas = k_H * P_gas)
 
 
 ]`,
-        4: `[PLACEHOLDER PROMPT 4: Put your custom ChatGPT prompt text here]`,
-        5: `[PLACEHOLDER PROMPT 5: Put your custom ChatGPT prompt text here]`,
-        6: `[PLACEHOLDER PROMPT 6: Put your custom ChatGPT prompt text here]`,
+        4: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+
+To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
+1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
+2. Clinical Variation: Change the patient profile (age, weight, indications), the specific medications, and the numerical values. Do not simply swap numbers using the same drug or scenario. Ensure the new scenarios remain clinically plausible.
+3. Medication Safety Formatting: Adhere strictly to ISMP (Institute for Safe Medication Practices) guidelines for numerical expressions:
+   - ALWAYS use a leading zero for decimals less than 1 (e.g., write 0.5 mg, NEVER .5 mg).
+   - NEVER use a trailing zero for whole numbers (e.g., write 5 mg, NEVER 5.0 mg).
+4. Output Layout: Present all 5 problems first (numbered 1–5) without answers. Insert a clear separator line (---). Place the detailed, step-by-step calculations, dimensional analysis, and final bolded answers at the very bottom.
+
+Here is the material to work from:
+
+### 1. Source Practice Problem(s)
+[
+to form
+ension
+d droplets
+Compute the HLB value of Glyceryl monostearate (Spans) having S
+= 166 and A = 205. Classify the use as well.
+
+=3.8 C
+
+(lipophilic surfactant )
+
+Liquid Surfactant Example: Glycerol dioleate (oily liquid)
+
+PROBLEM:
+Calculate the saponification number (S) of a liquid Glycerol dioleate surfactant 
+sample that has an HLB value of 4.50 and an acid number of the fatty acid (A) of 190.
+
+S = 147.25 mg KOH/g
+
+
+--------------------------------------------------------------------------------
+VARIATION 3: SOLVE FOR ACID NUMBER (A) (Given HLB & Saponification Number)
+--------------------------------------------------------------------------------
+Liquid Surfactant Example: Sorbitan trioleate (Span 85, oily liquid)
+
+PROBLEM:
+Determine the acid number of the fatty acid (A) for a liquid Sorbitan trioleate 
+sample with an HLB value of 1.80 and a saponification number (S) of 175.
+
+A = 192.31 mg KOH/g
+
+
+]
+
+### 2. Additional Directions & Preferences
+[
+
+Rounding Rules:
+    * Do not round intermediate values during computation.
+    * Round the final value to 2 decimal places (2 significant figures).
+]
+
+### 3. Constant Tables & Reference Data
+[
+
+Systems of Hydrophile-Lipophile Classi-
+fication. Griffin’ devised an arbitrary scale
+of values to serve as a measure of the
+hydrophilic-lipophilic balance (HLB) of
+surface active agents. By means of this
+number system, it is possible to establish an
+HLB range of optimum efficiency for each
+class of surfactant as seen in Figure 15-11.
+The higher the HLB of an agent, the more
+hydrophilic it is. The Spans, sorbitan esters
+manufactured by the Atlas Powder Com-
+pany, are lipophilic and have low HLB
+values (1.8 to 8.6); the Tweens, polyoxy-
+Solubilizing
+agents
+Detergents
+Hydrophilic —————
+O/W Emulsifying
+agents
+Wetting and
+spreading
+agents
+W/O Emulsifying
+agents
+Lipophilic
+} Most antifoaming
+agents
+HLB Scale
+Fig. 15-11. A scale showing classification of surfactant
+function on the basis of HLB values.ethylene derivatives of the Spans, are hydro-
+philic and have high HLB values (9.6 to
+16.7).
+The HLB of a number of polyhydric
+alcohol fatty acid esters, such as glyceryl
+monostearate, may be estimated by using
+the formula
+HLB = 20(1 EB 4) (16)
+where S is the saponification number of the
+ester and A is the acid number of the fatty
+acid. The HLB of polyoxyethylene sorbitan
+monolaurate (Tween 20) for which S =
+45.5 and A = 276 is
+45.5
+HLS 20(1 ~ 2.) =e 6.7
+For those materials with which it is not pos-
+sible to obtain good saponification num-
+bers, e.g., beeswax and lanolin derivatives,
+the following formula is used:
+mye t ss (17)
+where E is the per cent by weight of oxy-
+ethylene chains and P is the per cent by
+weight of polyhydric alcohol groups (e.g.,
+glycerol, sorbitol) in the molecule. Finally,
+when the hydrophilic portion of the surface
+active agent consists only of oxyethylene
+groups, equation (17) becomes
+many = 22 (18)
+5
+where E again is the weight percentage of
+ethylene oxide. For ionic surface active
+agents, compounds containing propylene
+oxide, nitrogen, etc., and for many of the
+complex natural emulsifiers, the original
+method of Griffin, involving the prepara-
+tion and observation of a series of emul-
+sions, must be used. The HLB values of
+some commonly used amphiphilic agents
+are given in Table 15-3.
+Davies® has calculated HLB values for
+surface active agents by splitting the various
+surfactant molecules into their component
+groups, each of which is assigned a group
+28
+Chapter 15 INTERFACIAL PHENOMENA 425
+TABLE 15-3. HLB Values of
+Some Amphiphilic Agents
+Substance HLB
+Oleic Acid 1
+Glyceryl monostearate ; 3.8
+Sorbitan monooleate (Span 80) 4.3
+Sorbitan monolaurate (Span 20) 8.6
+Triethanolamine oleate 12.0
+Polyoxyethylene sorbitan monooleate 15
+(Tween 80)
+Polyoxyethylene sorbitan monolaurate 16.7
+(Tween 20)
+Sodium oleate : 18.0
+Sodium lauryl sulfate
+
+
+
+
+HLB VALUE	USE rdowning
+0-3	Antifoaming agents
+4-6	W/O emulsifying agents
+7-9	Wetting agents
+8-18	O/W emulsifying agents
+13-15	Detergents
+	Solubilizing agents
+
+
+================================================================================
+PHARMACEUTICAL CALCULATIONS: HLB DERIVED PROBLEM SETS & VARIATIONS
+Formula Base: Griffin's Method for Non-Ionic Surfactants (Esters)
+    HLB = 20 * (1 - S / A)
+    Where:
+    - HLB = Hydrophilic-Lipophilic Balance
+    - S   = Saponification number of the ester
+    - A   = Acid number of the fatty acid
+    
+    ROUNDING RULES:
+    - Do not round intermediate values during computation.
+    - Round the final value to 2 decimal places.
+
+]`,
+        5: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+
+To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
+1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
+2. Clinical Variation: Change the patient profile (age, weight, indications), the specific medications, and the numerical values. Do not simply swap numbers using the same drug or scenario. Ensure the new scenarios remain clinically plausible.
+3. Medication Safety Formatting: Adhere strictly to ISMP (Institute for Safe Medication Practices) guidelines for numerical expressions:
+   - ALWAYS use a leading zero for decimals less than 1 (e.g., write 0.5 mg, NEVER .5 mg).
+   - NEVER use a trailing zero for whole numbers (e.g., write 5 mg, NEVER 5.0 mg).
+4. Output Layout: Present all 5 problems first (numbered 1–5) without answers. Insert a clear separator line (---). Place the detailed, step-by-step calculations, dimensional analysis, and final bolded answers at the very bottom.
+
+Here is the material to work from:
+
+### 1. Source Practice Problem(s)
+[
+
+A sample of chloroform rose
+to a height of 3.67 cm at 20° in a capillary
+tube having an inside radius of 0.01 cm.
+What is the surface tension of chloroform
+at this temperature? The density of chloro-
+form is 1.476 Gm/cm.
+y =1\2 x 0.01 cm X 3.67 cm
+x 1.476 Gm/cm? x 980.665 cm/sec?
+y = 26.56 Gm cm/sec?cm = 26.56 dynes/cm
+
+3. Calculate the surface tension of a solu-
+tion of a wetting agent which has a density
+of 1.008 gram/cm? and which rises 6.60
+cm in a capillary tube having an inside ra-
+dius of 0.02 cm. Answer: 65.24 dynes/cM
+
+Problem:
+A sample of ethanol (density = 0.789 g/cm³) rises to a height of 2.85 cm at 20°C in a capillary tube. If the surface tension of ethanol at this temperature is 22.30 dynes/cm, what is the inside radius of the capillary tube?
+
+Answer:
+Radius (r) = 0.02 cm
+
+
+
+
+Problem:
+Acetone has a surface tension of 23.70 dynes/cm and a density of 0.791 g/cm³ at 20°C. Calculate the height to which acetone will rise in a capillary tube with an inside radius of 0.015 cm. (Use g = 980.665 cm/s²)
+
+Answer:
+Height (h) = 4.07 cm
+
+
+
+
+Problem:
+An unknown organic liquid rises to a height of 5.12 cm in a capillary tube with an inside radius of 0.012 cm. If the surface tension of the liquid is measured to be 28.50 dynes/cm, determine the density of the liquid. 
+
+Answer:
+Density (ρ) = 0.95 g/cm³
+
+
+
+
+Problem:
+A glycerin-water solution has a density of 1.125 g/cm³ and a surface tension of 63.40 dynes/cm at 20°C. To what height will this solution rise in a capillary tube having an inside radius of 0.025 cm? 
+
+Answer:
+Height (h) = 4.60 cm
+
+
+
+]
+
+### 2. Additional Directions & Preferences
+[
+
+Rounding Rules:
+    * Do not round intermediate values during computation.
+    * Round the final value to 2 decimal places (2 significant figures).
+
+Use g = 980.665 cm/s²
+
+]
+
+### 3. Constant Tables & Reference Data
+[
+
+Capillary rise may also be explained as
+being due to the pressure difference across
+the curved meniscus of the liquid in the
+capillary. We have already seen in equation
+(7) that the pressure of the concave side of
+a curved surface is greater than that on the
+convex side. This means that the pressure
+in the liquid immediately below the menis-
+cus will be less than that outside the tube at
+the same height. As a result, the liquid will
+move up the capillary until the hydrostatic
+used liquids, the angle 6 is insignificant, i.e.,
+the liquid wets the capillary wall so that
+cos @ is taken as unity for practical purposes.
+(See left side of Figure 15-5.)
+The counteracting force of gravity
+(mass X acceleration) is given by the pro-
+duct of the cross-sectional area zr?, the
+height h of the liquid column to the lowest
+point of the meniscus, the difference in the
+density of the liquid p and its vapor po, and
+the acceleration of gravity: mr?h(o—po)g+
+w. The last term w is added to account for
+the weight of the upper part of the menis-
+cus. When the liquid has risen to its maxi-
+mum height, which may be read from the
+calibrations on the capillary tube, the op-
+posing forces are in equilibrium and ac-
+cordingly the surface tension can be cal-
+culated. The density of the vapor, the
+contact angle, and w can usually be disre-
+garded, hence
+For most liquids
+¢~0
+Qarry = wr2hpg
+and finally
+y = 1/2 rhpg
+
+
+] `,
+        6: `
+You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+
+To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
+1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
+2. Clinical Variation: Change the patient profile (age, weight, indications), the specific medications, and the numerical values. Do not simply swap numbers using the same drug or scenario. Ensure the new scenarios remain clinically plausible.
+3. Medication Safety Formatting: Adhere strictly to ISMP (Institute for Safe Medication Practices) guidelines for numerical expressions:
+   - ALWAYS use a leading zero for decimals less than 1 (e.g., write 0.5 mg, NEVER .5 mg).
+   - NEVER use a trailing zero for whole numbers (e.g., write 5 mg, NEVER 5.0 mg).
+4. Output Layout: Present all 5 problems first (numbered 1–5) without answers. Insert a clear separator line (---). Place the detailed, step-by-step calculations, dimensional analysis, and final bolded answers at the very bottom.
+
+Here is the material to work from:
+
+### 1. Source Practice Problem(s)
+[
+
+PROBLEM STATEMENT:
+
+Part 1: Sedimentation Rate (Stokes' Law)
+A pharmaceutical suspension contains spherical drug particles with a particle density of 1.30 g/cm³ and an average diameter of 2.50 µm dispersed in water (density = 1.00 g/cm³, viscosity = 1.00 cP). calculate the sedimentation velocity (v) of the particles in cm/s.
+
+
+
+
+Part 2: Sedimentation Parameters & Degree of Flocculation
+A 100 mL sample (V₀) of this suspension was formulated into both a flocculated system and a completely deflocculated system to evaluate its stability and sediment structure.
+
+- Flocculated System:
+  - Total volume (V₀) = 100 mL
+  - Ultimate sediment volume (V_u) = 50 mL
+  - Sedimentation Volume (F) = V_u / V₀
+
+- Deflocculated System:
+  - Total volume (V₀) = 100 mL
+  - Ultimate sediment volume (V_∞) = 83 mL
+  - Sedimentation Volume (F_∞) = V_∞ / V₀
+
+Calculate:
+1. The sedimentation volume of the flocculated suspension (F).
+2. The sedimentation volume of the deflocculated suspension (F_∞).
+3. The degree of flocculation (β = F / F_∞).
+
+v = 0.0001021526 cm/s
+v = 0.00010 cm/s (or 1.02 × 10⁻⁴ cm/s)
+
+
+Part 2: Sedimentation Parameters & Degree of Flocculation
+1. Flocculated Sedimentation Volume (F):
+   F = V_u / V₀ = 50 mL / 100 mL = 0.50
+
+2. Deflocculated Sedimentation Volume (F_∞):
+   F_∞ = V_∞ / V₀ = 83 mL / 100 mL = 0.83
+
+3. Degree of Flocculation (β):
+   β = F / F_∞ = 0.50 / 0.83 = 0.602409...
+
+Rounding the final value to 2 decimal places:
+β = 0.60
+
+
+
+
+Problem Statement:
+A suspension of a poorly soluble active pharmaceutical ingredient (API) is dispersed in an aqueous syrup solution (density_m = 1.15 g/cm³, viscosity = 2.50 cP). The particle density of the API is 1.45 g/cm³. Laboratory measurements indicate that the particles settle at a constant velocity (v) of 1.80 × 10⁻⁵ cm/s.
+d = 165.93 cm
+
+
+
+Problem Statement:
+An oil-in-water parenteral emulsion contains submicron lipid droplets with an average diameter (d) of 0.80 µm and a density of 0.92 g/cm³. The vehicle density is 1.02 g/cm³. During stability testing, creaming occurs at a velocity (v) of 3.20 × 10⁻⁶ cm/s. Calculate the viscosity (n) of the vehicle in centipoise (cP).
+
+n = 1.09 cP
+
+
+
+
+]
+
+### 2. Additional Directions & Preferences
+[
+
+Rounding Rules:
+    * Do not round intermediate values during computation.
+    * Round the final value to 2 decimal places (2 significant figures).
+Use 980.665
+]
+
+### 3. Constant Tables & Reference Data
+[
+
+V=
+d^2  (ps - po)  g
+/18 n
+
+B= v\v∞ 
+
+]`,
         7: `[PLACEHOLDER PROMPT 7: Put your custom ChatGPT prompt text here]`,
         8: `[PLACEHOLDER PROMPT 8: Put your custom ChatGPT prompt text here]`,
         9: `[PLACEHOLDER PROMPT 9: Put your custom ChatGPT prompt text here]`,
