@@ -37,9 +37,12 @@
     // --- GLOBAL CONFIGURATION ---
     const ADMIN_PASSWORD = "ronakalbo"; // CHANGE YOUR PASSWORD HERE
 
+    // String.raw keeps backslashes literal (fixes the "\2" crash and \frac, \text, \times, etc.)
+    const R = String.raw;
+
     // Fallback original mock values
     const defaultPrompts = {
-        1: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+        1: R`You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
 
 To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
 1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
@@ -263,7 +266,7 @@ R=0.08205
 ]
 
 Execution Directive: If Sections 2 or 3 are empty, proceed immediately using only Section 1 as your structural and data blueprint. Do not ask for clarification; prioritize absolute structural and mathematical alignment with Section 1.`,
-        2: `You are an expert Professor and instructional designer. Your primary objective is to analyze the underlying mathematical formulas, relationships, and concepts provided in the source material and generate exactly 10 new, distinct practice problems focused exclusively on formula rearrangement and algebraic derivation (isolating a target variable). Do NOT include numerical values or word problem scenarios. Respond in plain, clean text with standard Markdown formatting—do NOT wrap your entire output in a code block.
+        2: R`You are an expert Professor and instructional designer. Your primary objective is to analyze the underlying mathematical formulas, relationships, and concepts provided in the source material and generate exactly 10 new, distinct practice problems focused exclusively on formula rearrangement and algebraic derivation (isolating a target variable). Do NOT include numerical values or word problem scenarios. Respond in plain, clean text with standard Markdown formatting—do NOT wrap your entire output in a code block.
 
 To ensure absolute structural integrity and pedagogical accuracy, adhere to these strict rules:
 
@@ -529,7 +532,7 @@ nRT
 V
 
 R=0.08205]`,
-        3: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+        3: R`You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
 
 To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
 1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
@@ -572,8 +575,8 @@ Detailed Solution & Step-by-Step Step Breakdown:
 1. Identify Given Values:
 * P_gas = 570 mmHg
 * k_H = 8.42 × 10⁻⁴ M/atm
-1. Convert Pressure Units (mmHg to atm): P_gas = 570 mmHg / 760 mmHg/atm = 0.75 atm
-2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (8.42 × 10⁻⁴ mol/L·atm) * (0.75 atm) S_gas = 6.315 × 10⁻⁴ M (or mol/L)
+1. Convert Pressure Units (mmHg to atm): P_gas = 570 mmHg / 760 mmHg/atm = 0.75 atm
+2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (8.42 × 10⁻⁴ mol/L·atm) * (0.75 atm) S_gas = 6.315 × 10⁻⁴ M (or mol/L)
 Final Answer: The solubility of N₂ gas is 6.32 × 10⁻⁴ M.
 Problem 2: Given Pressure in Torr and Henry's Law Constant in M/mmHg
 Question: The Henry's Law constant for oxygen gas (O₂) in water at 25°C is given as 1.66 × 10⁻⁶ M/mmHg. If a container of oxygenated water is maintained under an oxygen partial pressure of 380 Torr at 25°C, determine the solubility of O₂ in mol/L. (Note: 1 Torr = 1 mmHg).
@@ -581,8 +584,8 @@ Detailed Solution & Step-by-Step Step Breakdown:
 1. Identify Given Values:
 * P_gas = 380 Torr = 380 mmHg
 * k_H = 1.66 × 10⁻⁶ M/mmHg
-1. Check Units Compatibility: Since 1 Torr = 1 mmHg, P_gas = 380 mmHg. The constant k_H is already expressed in M/mmHg, so no unit conversion between atm and mmHg is necessary.
-2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (1.66 × 10⁻⁶ M/mmHg) * (380 mmHg) S_gas = 6.308 × 10⁻⁴ M
+1. Check Units Compatibility: Since 1 Torr = 1 mmHg, P_gas = 380 mmHg. The constant k_H is already expressed in M/mmHg, so no unit conversion between atm and mmHg is necessary.
+2. Apply Henry's Law Equation: S_gas = k_H * P_gas S_gas = (1.66 × 10⁻⁶ M/mmHg) * (380 mmHg) S_gas = 6.308 × 10⁻⁴ M
 Final Answer: The solubility of O₂ gas is 6.31 × 10⁻⁴ M.
 Problem 3: Solving for Partial Pressure (in mmHg) Given Gas Solubility
 Question: The solubility of carbon dioxide (CO₂) in a soft drink sample at 25°C is determined to be 0.066 mol/L. If the Henry's Law constant for CO₂ in water at 25°C is 3.3 × 10⁻² mol/L·atm, calculate the partial pressure of CO₂ above the liquid in mmHg.
@@ -590,9 +593,9 @@ Detailed Solution & Step-by-Step Step Breakdown:
 1. Identify Given Values:
 * S_gas = 0.066 M (mol/L)
 * k_H = 3.3 × 10⁻² mol/L·atm
-1. Rearrange Henry's Law Formula to Solve for P_gas: P_gas = S_gas / k_H
-2. Calculate Pressure in atm: P_gas = (0.066 mol/L) / (3.3 × 10⁻² mol/L·atm) = 2.0 atm
-3. Convert Pressure from atm to mmHg: P_gas (in mmHg) = 2.0 atm * 760 mmHg/atm = 1520 mmHg
+1. Rearrange Henry's Law Formula to Solve for P_gas: P_gas = S_gas / k_H
+2. Calculate Pressure in atm: P_gas = (0.066 mol/L) / (3.3 × 10⁻² mol/L·atm) = 2.0 atm
+3. Convert Pressure from atm to mmHg: P_gas (in mmHg) = 2.0 atm * 760 mmHg/atm = 1520 mmHg
 Final Answer: The partial pressure of CO₂ required is 1520 mmHg (or 2.0 atm).
 
 
@@ -609,7 +612,7 @@ Final Answer: The partial pressure of CO₂ required is 1520 mmHg (or 2.0 atm).
 ### 3. Constant Tables & Reference Data
 [
 
-C = k * P  (or S_gas = k_H * P_gas)
+C = k * P  (or S_gas = k_H * P_gas)
 * C (or S_gas): Solubility of gas in liquid (M, mol/L)
 * k (or k_H): Henry's Law Constant
 * P (or P_gas): Partial pressure of gas above solution
@@ -617,7 +620,7 @@ C = k * P  (or S_gas = k_H * P_gas)
 
 
 ]`,
-        4: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+        4: R`You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
 
 To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
 1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
@@ -790,7 +793,7 @@ Formula Base: Griffin's Method for Non-Ionic Surfactants (Esters)
     - Round the final value to 2 decimal places.
 
 ]`,
-        5: `You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
+        5: R`You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
 
 To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
 1. Pharmaceutical Architecture: Identify the exact mathematical mechanics of the source problem—such as dimensional analysis steps, compounding formulas, dosing by body weight/BSA, pharmacokinetics, or dilution ratios (e.g., alligation, % w/v, mEq, mOsmol). Replicate this exact mathematical blueprint in all 5 new problems.
@@ -912,7 +915,7 @@ y = 1/2 rhpg
 
 
 ] `,
-        6: `
+        6: R`
 You are an expert Professor of Pharmacy and a clinical instructional designer. Your primary objective is to analyze the underlying pharmaceutical mathematics or clinical logic of the provided "Source Practice Problem" and generate exactly 5 new, distinct variations.
 
 To ensure absolute structural integrity and clinical accuracy, adhere to these strict rules:
@@ -1009,18 +1012,36 @@ d^2  (ps - po)  g
 B= v\v∞ 
 
 ]`,
-        7: `[PLACEHOLDER PROMPT 7: Put your custom ChatGPT prompt text here]`,
-        8: `[PLACEHOLDER PROMPT 8: Put your custom ChatGPT prompt text here]`,
-        9: `[PLACEHOLDER PROMPT 9: Put your custom ChatGPT prompt text here]`,
-        10: `[PLACEHOLDER PROMPT 10: Put your custom ChatGPT prompt text here]`,
-        11: `[PLACEHOLDER PROMPT 11: Put your custom ChatGPT prompt text here]`,
-        12: `[PLACEHOLDER PROMPT 12: Put your custom ChatGPT prompt text here]`,
-        13: `[PLACEHOLDER PROMPT 13: Put your custom ChatGPT prompt text here]`,
-        14: `[PLACEHOLDER PROMPT 14: Put your custom ChatGPT prompt text here]`
+        7: R`[PLACEHOLDER PROMPT 7: Put your custom ChatGPT prompt text here]`,
+        8: R`[PLACEHOLDER PROMPT 8: Put your custom ChatGPT prompt text here]`,
+        9: R`[PLACEHOLDER PROMPT 9: Put your custom ChatGPT prompt text here]`,
+        10: R`[PLACEHOLDER PROMPT 10: Put your custom ChatGPT prompt text here]`,
+        11: R`[PLACEHOLDER PROMPT 11: Put your custom ChatGPT prompt text here]`,
+        12: R`[PLACEHOLDER PROMPT 12: Put your custom ChatGPT prompt text here]`,
+        13: R`[PLACEHOLDER PROMPT 13: Put your custom ChatGPT prompt text here]`,
+        14: R`[PLACEHOLDER PROMPT 14: Put your custom ChatGPT prompt text here]`
     };
 
-    // Pull saved updates from local storage, or fall back to defaults
-    let promptDatabase = JSON.parse(localStorage.getItem('savedPrompts')) || defaultPrompts;
+    // Escape text so special characters never break the page layout
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    // Pull saved updates from local storage safely, merged over defaults
+    let promptDatabase = { ...defaultPrompts };
+    try {
+        const saved = JSON.parse(localStorage.getItem('savedPrompts'));
+        if (saved && typeof saved === 'object') {
+            promptDatabase = { ...defaultPrompts, ...saved };
+        }
+    } catch (e) {
+        console.warn('Could not read saved prompts, using defaults.', e);
+    }
     let isAdminAuthenticated = false;
 
     const matrixContainer = document.getElementById('matrixContainer');
@@ -1035,10 +1056,9 @@ B= v\v∞
         Object.keys(promptDatabase).forEach(id => {
             const block = document.createElement('div');
             block.className = "bg-[#161b26] border border-[#26354a] rounded-xl p-5 hover:border-[#3b5273] transition-all relative group";
-            
-            // Check display text: If it's Slot 1, always reflect the defaultPrompts version on interface
-            const displayText = promptDatabase[id] || defaultPrompts[id];
-            
+
+            const displayText = escapeHtml(promptDatabase[id] || defaultPrompts[id] || '');
+
             if (isAdminAuthenticated) {
                 // Editable Content Formats for Administrators
                 block.innerHTML = `
@@ -1075,9 +1095,10 @@ B= v\v∞
     // Checking Engine logic for incoming traffic paths
     function checkIncomingScan() {
         const urlParams = new URLSearchParams(window.location.search);
-        const promptTargetId = urlParams.get('id');
+        // Keep digits only so the id can never inject code
+        const promptTargetId = (urlParams.get('id') || '').replace(/[^0-9]/g, '');
 
-        if (promptTargetId && (promptTargetId == 1 || promptDatabase[promptTargetId])) {
+        if (promptTargetId && promptDatabase[promptTargetId]) {
             // SCANNED VIA QR CODE: Create action gesture overlay block bypass
             const overlay = document.createElement('div');
             overlay.className = "fixed inset-0 bg-[#0f141c]/95 backdrop-blur-md flex flex-col items-center justify-center z-50 p-6";
@@ -1129,7 +1150,7 @@ B= v\v∞
             </div>
         `;
         document.body.appendChild(modal);
-        
+
         // Enter Key listener for Password Field
         document.getElementById('passInput').addEventListener('keyup', (e) => {
             if (e.key === 'Enter') verifyPassword();
@@ -1162,21 +1183,25 @@ B= v\v∞
     // Write Editor modifications out into systemic persistence storage
     window.saveAllPrompts = function() {
         if (!isAdminAuthenticated) return;
-        
+
         Object.keys(promptDatabase).forEach(id => {
-            const textareaValue = document.getElementById(`editor-${id}`).value;
-            promptDatabase[id] = textareaValue;
+            const el = document.getElementById(`editor-${id}`);
+            if (el) promptDatabase[id] = el.value;
         });
 
-        localStorage.setItem('savedPrompts', JSON.stringify(promptDatabase));
-        
+        try {
+            localStorage.setItem('savedPrompts', JSON.stringify(promptDatabase));
+        } catch (e) {
+            console.warn('Could not save to local storage.', e);
+        }
+
         // Notify Success UI
         statusAlert.className = "mb-6 p-4 rounded-xl text-center font-medium border text-sm bg-[#1b2b24] border-[#2e5c44] text-[#a3e635]";
         statusMessage.innerHTML = `<i class="fa-solid fa-floppy-disk mr-2"></i> Repository updates written to local storage matrix successfully!`;
         statusAlert.classList.remove('hidden');
-        
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        
+
         setTimeout(() => {
             statusAlert.classList.add('hidden');
         }, 4000);
@@ -1187,6 +1212,7 @@ B= v\v∞
         isAdminAuthenticated = false;
         adminControls.classList.add('hidden');
         logoutBtn.classList.add('hidden');
+        buildInterfaceMatrix();
         spawnLoginModal();
     };
 
